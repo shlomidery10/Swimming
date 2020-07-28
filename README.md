@@ -1,2 +1,2 @@
 # Swimming
- An application for swimming coaches to plan training.
+ An application for swimming coaches to plan training
