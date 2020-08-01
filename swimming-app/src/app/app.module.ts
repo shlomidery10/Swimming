@@ -18,6 +18,10 @@ import { TrainingCellComponent } from './Icell_Renderer_Components/training-cell
 import { ExerciseComponent } from './exercise/exercise.component';
 import { SplitDistanceComponent } from './exercise/split-distance/split-distance.component';
 import { AutowidthDirective } from './autowidth.directive';
+import { RegisterWorkoutComponent } from './register-workout/register-workout.component';
+import {MatInputModule} from '@angular/material/input';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule, MatRippleModule} from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -29,9 +33,7 @@ import { AutowidthDirective } from './autowidth.directive';
     TrainingSetMajorExerciseComponent,
     TrainingSetWarmUpComponent,
     TrainingCellComponent,
-    ExerciseComponent,
-    SplitDistanceComponent,
-    AutowidthDirective,
+    RegisterWorkoutComponent,
 
 
     
@@ -45,7 +47,12 @@ import { AutowidthDirective } from './autowidth.directive';
     MatIconModule,
     MatButtonModule,
     MatAutocompleteModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatInputModule,
+    FormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+
 
 
   ],
