@@ -15,6 +15,11 @@ import { TrainingSetWarmUpComponent } from './training-set/training-set-warm-up/
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TrainingCellComponent } from './Icell_Renderer_Components/training-cell/training-cell.component';
+import { RegisterWorkoutComponent } from './register-workout/register-workout.component';
+import {MatInputModule} from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule, MatRippleModule} from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -26,6 +31,7 @@ import { TrainingCellComponent } from './Icell_Renderer_Components/training-cell
     TrainingSetMajorExerciseComponent,
     TrainingSetWarmUpComponent,
     TrainingCellComponent,
+    RegisterWorkoutComponent,
 
 
     
@@ -38,7 +44,12 @@ import { TrainingCellComponent } from './Icell_Renderer_Components/training-cell
     MatIconModule,
     MatButtonModule,
     MatAutocompleteModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatInputModule,
+    FormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+
 
 
   ],
