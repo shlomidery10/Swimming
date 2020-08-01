@@ -13,13 +13,16 @@ import { TrainingSetReleaseComponent } from './training-set/training-set-release
 import { TrainingSetMajorExerciseComponent } from './training-set/training-set-major-exercise/training-set-major-exercise.component';
 import { TrainingSetWarmUpComponent } from './training-set/training-set-warm-up/training-set-warm-up.component';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { TrainingCellComponent } from './Icell_Renderer_Components/training-cell/training-cell.component';
+import { ExerciseComponent } from './exercise/exercise.component';
+import { SplitDistanceComponent } from './exercise/split-distance/split-distance.component';
+import { AutowidthDirective } from './autowidth.directive';
 import { RegisterWorkoutComponent } from './register-workout/register-workout.component';
 import {MatInputModule} from '@angular/material/input';
-import { FormsModule } from '@angular/forms';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule, MatRippleModule} from '@angular/material/core';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,9 @@ import {MatNativeDateModule, MatRippleModule} from '@angular/material/core';
     TrainingSetWarmUpComponent,
     TrainingCellComponent,
     RegisterWorkoutComponent,
-
+    ExerciseComponent,
+    SplitDistanceComponent,
+    AutowidthDirective
 
     
   ],
@@ -41,15 +46,15 @@ import {MatNativeDateModule, MatRippleModule} from '@angular/material/core';
     AppRoutingModule,
     AgGridModule.withComponents([]),
     BrowserAnimationsModule,
+    FormsModule,
     MatIconModule,
     MatButtonModule,
     MatAutocompleteModule,
     ReactiveFormsModule,
     MatInputModule,
-    FormsModule,
     MatDatepickerModule,
     MatNativeDateModule,
-
+    CommonModule 
 
 
   ],
