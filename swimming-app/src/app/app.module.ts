@@ -13,8 +13,11 @@ import { TrainingSetReleaseComponent } from './training-set/training-set-release
 import { TrainingSetMajorExerciseComponent } from './training-set/training-set-major-exercise/training-set-major-exercise.component';
 import { TrainingSetWarmUpComponent } from './training-set/training-set-warm-up/training-set-warm-up.component';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { TrainingCellComponent } from './Icell_Renderer_Components/training-cell/training-cell.component';
+import { ExerciseComponent } from './exercise/exercise.component';
+import { SplitDistanceComponent } from './exercise/split-distance/split-distance.component';
+import { AutowidthDirective } from './autowidth.directive';
 
 @NgModule({
   declarations: [
@@ -26,6 +29,9 @@ import { TrainingCellComponent } from './Icell_Renderer_Components/training-cell
     TrainingSetMajorExerciseComponent,
     TrainingSetWarmUpComponent,
     TrainingCellComponent,
+    ExerciseComponent,
+    SplitDistanceComponent,
+    AutowidthDirective,
 
 
     
@@ -35,6 +41,7 @@ import { TrainingCellComponent } from './Icell_Renderer_Components/training-cell
     AppRoutingModule,
     AgGridModule.withComponents([]),
     BrowserAnimationsModule,
+    FormsModule,
     MatIconModule,
     MatButtonModule,
     MatAutocompleteModule,

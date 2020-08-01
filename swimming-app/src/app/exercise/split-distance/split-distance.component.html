@@ -1,0 +1,17 @@
+<!-- <div class="container" > -->
+    <div class="row" (click)="inputOnChange()">
+        <div class="col">
+            <label>
+                <input Autowidth type="number" id="distance" name="distance" [(ngModel)]="splitDistance.distance"  (change)="inputOnChange()" [disabled]="isBlank" >
+            </label>
+        </div>
+            -
+        <div class="col">
+            <label>
+                <input Autowidth type="text" id="description" name="description" [(ngModel)]="splitDistance.description" (change)="inputOnChange()" [disabled]="isBlank">
+            </label>
+        </div>
+            +
+    </div>
+<!-- </div> -->
+    
