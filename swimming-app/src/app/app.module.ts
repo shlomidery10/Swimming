@@ -22,6 +22,7 @@ import { RegisterWorkoutComponent } from './register-workout/register-workout.co
 import {MatInputModule} from '@angular/material/input';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule, MatRippleModule} from '@angular/material/core';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,9 @@ import {MatNativeDateModule, MatRippleModule} from '@angular/material/core';
     TrainingSetWarmUpComponent,
     TrainingCellComponent,
     RegisterWorkoutComponent,
-
+    ExerciseComponent,
+    SplitDistanceComponent,
+    AutowidthDirective
 
     
   ],
@@ -49,10 +52,9 @@ import {MatNativeDateModule, MatRippleModule} from '@angular/material/core';
     MatAutocompleteModule,
     ReactiveFormsModule,
     MatInputModule,
-    FormsModule,
     MatDatepickerModule,
     MatNativeDateModule,
-
+    CommonModule 
 
 
   ],
