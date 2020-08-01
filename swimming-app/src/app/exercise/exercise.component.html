@@ -1,33 +1,19 @@
 <p>exercise works!</p>
     <div class="container-fluid">
         <div class="row">
-            <div class="col">
-                <label>
-                    <input Autowidth type="number" id="repetition" name="repetition" [(ngModel)]="value.repetition"  (change)="inputOnChange()" >
-                </label>
-            </div>
+                <mat-form-autowidth-field [type]="'number'" [minWidth]="50" [(value)]="value.repetition"></mat-form-autowidth-field>
                 X
-            <div class="col">
-                <label>
-                    <input Autowidth type="number" id="distance" name="distance" [(ngModel)]="value.distance"  (change)="inputOnChange()" >
-                </label>
-            </div>
+                <mat-form-autowidth-field [type]="'number'" [minWidth]="50" [(value)]="value.distance"></mat-form-autowidth-field>
                 -
-            <div class="col">
-                <label>
-                    <input Autowidth type="text" id="description" name="description" [(ngModel)]="value.description"  (change)="inputOnChange()" >
-                </label>
-            </div>
+                <mat-form-autowidth-field [type]="'text'" [minWidth]="50" [(value)]="value.description"></mat-form-autowidth-field>
                 [
             <!-- <div class="container"> -->
-                <div class="row">
-                    <div class="col" *ngFor="let splitDistance of value.splitDistances; index as i;">
+                    <div class="row" *ngFor="let splitDistance of value.splitDistances; index as i;">
                         <split-distance [(splitDistance)]="value.splitDistances[i]"></split-distance>
                     </div>
-                    <div class="col">
+                    <div class="row">
                         <split-distance blank (splitDistanceChange)= "addNewSplitDistance($event)"></split-distance>
                     </div>
-                </div>
             <!-- </div> -->
                 
                 ]

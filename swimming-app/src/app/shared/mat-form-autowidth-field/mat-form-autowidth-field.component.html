@@ -1,0 +1,5 @@
+<mat-form-field style="margin-right: 30px;"  [ngStyle]="{'width.px': width}">
+    <!-- <mat-label>distance</mat-label> -->
+    <input matInput type="{{type}}" [(ngModel)]="value"  (change)="inputOnChange()" (input)="resize()" [ngStyle]="{'width.px': width}" [disabled]="isBlank" >
+</mat-form-field>
+<span #hiddenText style="visibility: hidden; white-space: pre;">{{value}}</span>

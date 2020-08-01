@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ElementRef, ViewChild } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { SplitDistance } from 'src/app/model/split-distance.model';
 
@@ -15,12 +15,20 @@ export class SplitDistanceComponent implements OnInit {
     this.isBlank = blank === '' || blank;
   }
   @Output() splitDistanceChange = new EventEmitter();
-  constructor() { }
+  @ViewChild('hiddenText') textEl: ElementRef;
+  width:number;
+  minWidth: number =30;
 
+  constructor() { }
   ngOnInit(): void {
     if (this.isBlank){
       this.splitDistance= new SplitDistance();
     }
+    
+  }
+
+  resize() {
+    setTimeout(() => this.width = Math.max(this.minWidth, this.textEl.nativeElement.offsetWidth));
   }
 
   inputOnChange(){

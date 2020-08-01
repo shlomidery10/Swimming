@@ -17,17 +17,18 @@ export class AutowidthDirective {
   }
 
   private resize() {
-    switch (this.el.nativeElement.type) {
-      case "text":
-        this.el.nativeElement.setAttribute('style','min-width: 80px; width:'+ ((this.el.nativeElement.value.length+1)*8 ) + 'px');
-        
-        break;
-      case "number":
-          this.el.nativeElement.setAttribute('style','min-width: 30px; width:'+ ((this.el.nativeElement.value.length+1)*8 ) + 'px');
-          break;
+    // console.log(this.el.nativeElement.children[0].children);
     
-      default:
-        break;
-    }
+    // switch (this.el.nativeElement.type) {
+    //   case "text":
+    //     this.el.nativeElement.setAttribute('style','min-width: 80px; width:'+ ((this.el.nativeElement.value.length+1)*8 ) + 'px');
+    //     break;
+    //   case "number":
+    //       this.el.nativeElement.setAttribute('style','min-width: 30px; width:'+ ((this.el.nativeElement.value.length+1)*8 ) + 'px');
+    //       break;
+    
+    //   default:
+    //     break;
+    // }
   }
 }

@@ -23,6 +23,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule, MatRippleModule} from '@angular/material/core';
 import { CommonModule } from '@angular/common';
+import { MatFormAutowidthFieldComponent } from './shared/mat-form-autowidth-field/mat-form-autowidth-field.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { CommonModule } from '@angular/common';
     RegisterWorkoutComponent,
     ExerciseComponent,
     SplitDistanceComponent,
-    AutowidthDirective
+    AutowidthDirective,
+    MatFormAutowidthFieldComponent
 
     
   ],
