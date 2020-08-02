@@ -9,7 +9,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class RegisterWorkoutComponent implements OnInit {
   // loginForm: FormGroup;
   value = 'Clear me';
-  traineeName:string;
+  trainerName:string;
   week:number;
   goal_of_training:string;
   date:string;

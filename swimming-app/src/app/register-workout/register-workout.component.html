@@ -1,16 +1,16 @@
 <div class="container">
 <form class="center">
     <mat-form-field style="margin-right: 30px;">
-      <mat-label>Name of the trainee</mat-label>
-      <input matInput [(ngModel)]="traineeName" [ngModelOptions]="{standalone: true}">
+      <mat-label>Name of the trainer</mat-label>
+      <input matInput [(ngModel)]="trainerName" [ngModelOptions]="{standalone: true}">
     </mat-form-field>
   
-      <mat-form-field class="example-full-width" appearance="fill" style="width:auto ;">
+      <mat-form-field class="example-full-width" appearance="fill" style="width:auto; margin-right: 30px;">
         <mat-label>Choose a date</mat-label>
-        <input matInput [matDatepicker]="picker"  [(ngModel)]="date" [ngModelOptions]="{standalone: true}">
+        <input matInput [matDatepicker]="picker"  [(ngModel)]="date" [ngModelOptions]="{standalone: true}"  (click)="picker.open()">
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
-      <button mat-raised-button (click)="picker.open()"style="margin-left: 5px;margin-right: 20px;">Open</button>
+      <!-- <button mat-raised-button (click)="picker.open()"style="margin-left: 5px;margin-right: 20px;">Open</button> -->
 
       <mat-form-field  style="margin-right: 30px;">
         <mat-label>Week Number</mat-label>
