@@ -1,20 +1,27 @@
 <div class="container-fluid">
     <div class="row">
             <mat-form-autowidth-field [type]="'number'" [minWidth]="50" [(value)]="value.repetition"></mat-form-autowidth-field>
-            X
+            
+            <mat-label>x</mat-label>
+            
             <mat-form-autowidth-field [type]="'number'" [minWidth]="50" [(value)]="value.distance"></mat-form-autowidth-field>
-            -
+            
+            <mat-label>-</mat-label>
+            
             <mat-form-autowidth-field [type]="'text'" [minWidth]="50" [(value)]="value.description"></mat-form-autowidth-field>
-            [
+            
+            <mat-label>[</mat-label>
+
         <!-- <div class="container"> -->
-                <div class="row" *ngFor="let exercise of value.exerciseSets; index as i;">
+                <div  *ngFor="let exercise of value.exerciseSets; index as i;">
                     <exercise-set [(exerciseSet)]="value.exerciseSets[i]"></exercise-set>
                 </div>
-                <div class="row">
+                <div>
                     <exercise-set blank (exerciseSetChange)= "addNewSplitDistance($event)"></exercise-set>
                 </div>
         <!-- </div> -->
             
-            ]
+            <mat-label>]</mat-label>
+
     </div>
 </div>

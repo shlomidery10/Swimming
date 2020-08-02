@@ -24,8 +24,9 @@ export class GridTrainingPlanComponent implements OnInit {
       columnDefs: this.columnDefs,
       onGridReady: () => {
           this.gridOptions.api.sizeColumnsToFit();
-          console.log();
-          
+      },
+      onCellValueChanged:() => {
+        this.gridOptions.api.sizeColumnsToFit();
       },
       rowHeight: 50, // recommended row height for material design data grids,
       headerHeight: 48,
@@ -46,6 +47,8 @@ export class GridTrainingPlanComponent implements OnInit {
       this.rowData.push({exercise: exercise});
       console.log(this.rowData);
       this.gridOptions.api.setRowData(this.rowData);
+      this.gridOptions.api.sizeColumnsToFit();
+
     }
 
 

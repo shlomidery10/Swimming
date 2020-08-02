@@ -15,15 +15,17 @@ export class ExerciseComponent implements OnInit {
   //  repetition distance description
   // splitDistances: SplitDistance[] = new Array<SplitDistance>();
   constructor() {
-    this.value = new Exercise(null,null,null,new Array<ExerciseSet>());
+    // this.value = new Exercise(null,null,null,new Array<ExerciseSet>());
    }
 
   ngOnInit(): void {
-    this.value.exerciseSets.push(new Exercise(null,null,null,new Array<ExerciseSet>()));
+    if(!this.value.exerciseSets || this.value.exerciseSets.length==0){
+      this.value.exerciseSets.push(new ExerciseSet(null,null));
+    }
   }
 
-  addNewSplitDistance(splitDistance:ExerciseSet){
-    this.value.exerciseSets.push(splitDistance);
+  addNewSplitDistance(exerciseSet:ExerciseSet){
+    this.value.exerciseSets.push(exerciseSet);
   }
   
   inputOnChange(){

@@ -1,13 +1,14 @@
 <!-- <div class="container" > -->
-    <div class="row" (click)="inputOnChange()">
+    <div (click)="inputOnChange()">
         <!-- <div class="col"> -->
             <mat-form-autowidth-field [type]="'number'" [isBlank]="isBlank" [minWidth]="50" [(value)]="exerciseSet.distance"></mat-form-autowidth-field>
         <!-- </div> -->
-            -
+            <mat-label>-</mat-label>
         <!-- <div class="col"> -->
             <mat-form-autowidth-field [type]="'text'" [isBlank]="isBlank" [minWidth]="50" [(value)]="exerciseSet.description"></mat-form-autowidth-field>
         <!-- </div> -->
-            +
+            <mat-label *ngIf="!isBlank">+</mat-label>
+
     </div>
 <!-- </div> -->
     
