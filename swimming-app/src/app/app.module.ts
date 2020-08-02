@@ -14,9 +14,8 @@ import { TrainingSetMajorExerciseComponent } from './training-set/training-set-m
 import { TrainingSetWarmUpComponent } from './training-set/training-set-warm-up/training-set-warm-up.component';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { TrainingCellComponent } from './Icell_Renderer_Components/training-cell/training-cell.component';
+import { TrainingCellComponent } from './grid-training-plan/Icell_Renderer_Components/training-cell/training-cell.component';
 import { ExerciseComponent } from './exercise/exercise.component';
-import { SplitDistanceComponent } from './exercise/split-distance/split-distance.component';
 import { AutowidthDirective } from './autowidth.directive';
 import { RegisterWorkoutComponent } from './register-workout/register-workout.component';
 import {MatInputModule} from '@angular/material/input';
@@ -24,6 +23,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule, MatRippleModule} from '@angular/material/core';
 import { CommonModule } from '@angular/common';
 import { MatFormAutowidthFieldComponent } from './shared/mat-form-autowidth-field/mat-form-autowidth-field.component';
+import { ExerciseSetComponent } from './exercise/exercise-set/exercise-set.component';
 
 @NgModule({
   declarations: [
@@ -37,9 +37,9 @@ import { MatFormAutowidthFieldComponent } from './shared/mat-form-autowidth-fiel
     TrainingCellComponent,
     RegisterWorkoutComponent,
     ExerciseComponent,
-    SplitDistanceComponent,
     AutowidthDirective,
-    MatFormAutowidthFieldComponent
+    MatFormAutowidthFieldComponent,
+    ExerciseSetComponent,
 
     
   ],

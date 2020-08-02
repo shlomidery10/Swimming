@@ -1,7 +1,7 @@
 import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import { Exercise } from '../model/exercise.model';
-import { SplitDistance } from '../model/split-distance.model';
+import { Exercise } from '../shared/models/exercise.model';
+import { ExerciseSet } from '../shared/models/exerciseSet.model';
 
 @Component({
   selector: 'exercise',
@@ -15,16 +15,15 @@ export class ExerciseComponent implements OnInit {
   //  repetition distance description
   // splitDistances: SplitDistance[] = new Array<SplitDistance>();
   constructor() {
-    this.value = new Exercise();
-    this.value.splitDistances = new Array<SplitDistance>();
+    this.value = new Exercise(null,null,null,new Array<ExerciseSet>());
    }
 
   ngOnInit(): void {
-    this.value.splitDistances.push(new SplitDistance());
+    this.value.exerciseSets.push(new Exercise(null,null,null,new Array<ExerciseSet>()));
   }
 
-  addNewSplitDistance(splitDistance:SplitDistance){
-    this.value.splitDistances.push(splitDistance);
+  addNewSplitDistance(splitDistance:ExerciseSet){
+    this.value.exerciseSets.push(splitDistance);
   }
   
   inputOnChange(){

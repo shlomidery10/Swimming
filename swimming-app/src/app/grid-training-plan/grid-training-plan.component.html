@@ -1,9 +1,21 @@
-<ag-grid-angular
+<div style="float:left; margin-bottom:5px;" >
+    <div class="container">
+        <div class="row">
+            <ag-grid-angular
+            style="width: 100%; height: 200px;"
+            class="ag-theme-alpine"
+            [gridOptions]="gridOptions">
+            </ag-grid-angular>
+        </div>   
+        <div class="row">
+            <button (click)="addNewExercise()" mat-icon-button style="outline: none;" >
+                <mat-icon>add_circle_outline</mat-icon>
+            </button>  
+{{rowData|json}}
 
-    style="width: 100%; height: 200px;"
-    class="ag-theme-alpine"
-    [gridOptions]="gridOptions">
+        </div>
+    </div>
+</div>
 
-</ag-grid-angular>
 
 

@@ -1,20 +1,20 @@
 import { Component, OnInit, Input, Output, EventEmitter, ElementRef, ViewChild } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import { SplitDistance } from 'src/app/model/split-distance.model';
+import { ExerciseSet } from '../../shared/models/exerciseSet.model';
 
 @Component({
-  selector: 'split-distance',
-  templateUrl: './split-distance.component.html',
-  styleUrls: ['./split-distance.component.css']
+  selector: 'exercise-set',
+  templateUrl: './exercise-set.component.html',
+  styleUrls: ['./exercise-set.component.css']
 })
-export class SplitDistanceComponent implements OnInit {
+export class ExerciseSetComponent implements OnInit {
 
-  @Input() splitDistance: SplitDistance;
+  @Input() exerciseSet: ExerciseSet;
   isBlank: boolean;
   @Input('blank') set setAttribute(blank: boolean | '') {
     this.isBlank = blank === '' || blank;
   }
-  @Output() splitDistanceChange = new EventEmitter();
+  @Output() exerciseSetChange = new EventEmitter();
   @ViewChild('hiddenText') textEl: ElementRef;
   width:number;
   minWidth: number =30;
@@ -22,7 +22,7 @@ export class SplitDistanceComponent implements OnInit {
   constructor() { }
   ngOnInit(): void {
     if (this.isBlank){
-      this.splitDistance= new SplitDistance();
+      this.exerciseSet= new ExerciseSet(null,null);
     }
     
   }
@@ -33,9 +33,9 @@ export class SplitDistanceComponent implements OnInit {
 
   inputOnChange(){
     if (this.isBlank){
-      this.splitDistanceChange.emit(new SplitDistance());
+      this.exerciseSetChange.emit(new ExerciseSet(null,null));
     }else{
-      this.splitDistanceChange.emit(this.splitDistance);
+      this.exerciseSetChange.emit(this.exerciseSet);
     }
 
   }

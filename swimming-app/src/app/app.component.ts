@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Exercise } from './model/exercise.model';
-import { SplitDistance } from './model/split-distance.model';
+import { Exercise } from './shared/models/exercise.model';
+import { ExerciseSet } from './shared/models/exerciseSet.model';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -13,6 +13,6 @@ export class AppComponent {
     description:"",
     distance:null,
     repetition:null,
-    splitDistances:new Array<SplitDistance>()
+    exerciseSets:new Array<ExerciseSet>()
   };
 }

@@ -1,21 +1,20 @@
-<p>exercise works!</p>
-    <div class="container-fluid">
-        <div class="row">
-                <mat-form-autowidth-field [type]="'number'" [minWidth]="50" [(value)]="value.repetition"></mat-form-autowidth-field>
-                X
-                <mat-form-autowidth-field [type]="'number'" [minWidth]="50" [(value)]="value.distance"></mat-form-autowidth-field>
-                -
-                <mat-form-autowidth-field [type]="'text'" [minWidth]="50" [(value)]="value.description"></mat-form-autowidth-field>
-                [
-            <!-- <div class="container"> -->
-                    <div class="row" *ngFor="let splitDistance of value.splitDistances; index as i;">
-                        <split-distance [(splitDistance)]="value.splitDistances[i]"></split-distance>
-                    </div>
-                    <div class="row">
-                        <split-distance blank (splitDistanceChange)= "addNewSplitDistance($event)"></split-distance>
-                    </div>
-            <!-- </div> -->
-                
-                ]
-        </div>
+<div class="container-fluid">
+    <div class="row">
+            <mat-form-autowidth-field [type]="'number'" [minWidth]="50" [(value)]="value.repetition"></mat-form-autowidth-field>
+            X
+            <mat-form-autowidth-field [type]="'number'" [minWidth]="50" [(value)]="value.distance"></mat-form-autowidth-field>
+            -
+            <mat-form-autowidth-field [type]="'text'" [minWidth]="50" [(value)]="value.description"></mat-form-autowidth-field>
+            [
+        <!-- <div class="container"> -->
+                <div class="row" *ngFor="let exercise of value.exerciseSets; index as i;">
+                    <exercise-set [(exerciseSet)]="value.exerciseSets[i]"></exercise-set>
+                </div>
+                <div class="row">
+                    <exercise-set blank (exerciseSetChange)= "addNewSplitDistance($event)"></exercise-set>
+                </div>
+        <!-- </div> -->
+            
+            ]
     </div>
+</div>
