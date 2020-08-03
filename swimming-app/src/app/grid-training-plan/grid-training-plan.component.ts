@@ -12,7 +12,11 @@ export class GridTrainingPlanComponent implements OnInit {
   gridOptions:GridOptions;
 
   columnDefs = [
-    {field: 'exercise',cellRenderer: "training_cell_component"},
+    {
+      field: 'exercise',
+      cellRenderer: "training_cell_component", 
+      // autoHeight: true,
+  },
   ];
   rowData = [
     { exercise: new Exercise(null,null,null,[])},
@@ -23,10 +27,11 @@ export class GridTrainingPlanComponent implements OnInit {
       rowData: this.rowData,
       columnDefs: this.columnDefs,
       onGridReady: () => {
-          this.gridOptions.api.sizeColumnsToFit();
+          this.gridOptions.columnApi.autoSizeAllColumns();
       },
       onCellValueChanged:() => {
-        this.gridOptions.api.sizeColumnsToFit();
+        this.gridOptions.columnApi.autoSizeAllColumns();
+        // this.gridOptions.columnApi.he
       },
       rowHeight: 50, // recommended row height for material design data grids,
       headerHeight: 48,

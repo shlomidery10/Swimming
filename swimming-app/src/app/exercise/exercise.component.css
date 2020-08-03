@@ -9,11 +9,9 @@ input[type="number"] {
 mat-form-autowidth-field{
     margin-right: -15px;
     margin-left: 5px;
-
 }
 
 mat-label{
     margin-right: 5px;
     margin-left: 5px;
-
 }
