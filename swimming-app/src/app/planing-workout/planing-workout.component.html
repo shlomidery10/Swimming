@@ -1,9 +1,10 @@
 
-
-<app-register-workout>
-
-
-</app-register-workout>
-
-<app-grid-training-plan>
-</app-grid-training-plan>
+<div class="container">
+    <app-register-workout [(workout)]="workout" class="row"></app-register-workout>
+    <div class="row" *ngFor="let workoutPart of workout.workoutParts; index as i;">
+        <workout-part-plan style="width: 100%;" [(workoutPart)]="workout.workoutParts[i]"></workout-part-plan>
+    </div>
+    <div class="row">
+        {{workout|json}}
+    </div>
+</div>

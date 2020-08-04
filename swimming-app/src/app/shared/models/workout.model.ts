@@ -6,13 +6,13 @@ export class Workout {
       this.week = week;
       this.goalOfTraining = goalOfTraining;
       this.date = date;
-      this.WorkoutParts = WorkoutParts;
+      this.workoutParts = WorkoutParts;
     }
 
     trainerName: string ;
     week: number ;
     goalOfTraining: string ;
     date:Date ;
-    WorkoutParts:  Array<WorkoutPart>;
+    workoutParts:  Array<WorkoutPart>;
 
   }

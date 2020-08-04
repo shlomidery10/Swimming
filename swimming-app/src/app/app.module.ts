@@ -24,6 +24,7 @@ import {MatNativeDateModule, MatRippleModule} from '@angular/material/core';
 import { CommonModule } from '@angular/common';
 import { MatFormAutowidthFieldComponent } from './shared/mat-form-autowidth-field/mat-form-autowidth-field.component';
 import { ExerciseSetComponent } from './exercise/exercise-set/exercise-set.component';
+import { WorkoutPartPlanComponent } from './workout-part-plan/workout-part-plan.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { ExerciseSetComponent } from './exercise/exercise-set/exercise-set.compo
     AutowidthDirective,
     MatFormAutowidthFieldComponent,
     ExerciseSetComponent,
+    WorkoutPartPlanComponent,
 
     
   ],

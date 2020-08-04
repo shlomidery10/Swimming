@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges, SimpleChanges, Input, Output, EventEmitter } from '@angular/core';
 import { Module, GridOptions } from 'ag-grid-community';
 import { TrainingCellComponent } from './Icell_Renderer_Components/training-cell/training-cell.component';
 import { Exercise } from 'src/app/shared/models/exercise.model';
@@ -10,9 +10,10 @@ import 'ag-grid-community/dist/styles/ag-theme-material.css';
   templateUrl: './grid-training-plan.component.html',
   styleUrls: ['./grid-training-plan.component.css']
 })
-export class GridTrainingPlanComponent implements OnInit {
+export class GridTrainingPlanComponent implements OnInit, OnChanges {
   gridOptions:GridOptions;
-
+  @Input() exercises:Exercise[] = [ new Exercise(null,null,null,[])];
+  @Output() exercisesChange = new EventEmitter();
   columnDefs = [
     {
       field: 'exercise',
@@ -20,9 +21,7 @@ export class GridTrainingPlanComponent implements OnInit {
       // autoHeight: true,
   },
   ];
-  rowData = [
-    { exercise: new Exercise(null,null,null,[])},
-  ];
+  rowData = this.exercises.map(e=> {return { exercise:e}} );
 
   constructor() { 
     this.gridOptions = <GridOptions>{
@@ -61,14 +60,24 @@ export class GridTrainingPlanComponent implements OnInit {
   
   ngOnInit(): void {
   }
+  
+  ngOnChanges(changes: SimpleChanges): void {
+    this.updateRowData();
+  }
+
+  updateRowData(){
+    if(this.gridOptions.api){
+      this.rowData = this.exercises.map(e=> {return { exercise:e}} );
+      this.gridOptions.api.setRowData(this.rowData);
+      this.gridOptions.api.sizeColumnsToFit();
+    }
+  }
 
   addNewExercise()
     {
-      let exercise:Exercise=new Exercise(null,null,null,[]);
-      this.rowData.push({exercise: exercise});
-      console.log(this.rowData);
-      this.gridOptions.api.setRowData(this.rowData);
-      this.gridOptions.api.sizeColumnsToFit();
+      let newEmptyExercise:Exercise=new Exercise(null,null,null,[]);
+      this.exercises.push(newEmptyExercise);
+      this.updateRowData();
 
     }
 

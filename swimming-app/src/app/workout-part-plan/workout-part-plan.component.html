@@ -1,0 +1,15 @@
+<div class="container">
+  <form class="row center">
+    <mat-form-field style="margin-right: 30px;">
+      <mat-label>workout Part</mat-label>
+      <input matInput type="text" [(ngModel)]="workoutPart.name"  [ngModelOptions]="{standalone: true}">
+    </mat-form-field>
+
+      <mat-form-field  style="margin-right: 30px;" >
+        <mat-label>Goal of the Training</mat-label>
+      <input matInput type="text" [(ngModel)]="workoutPart.goal"  [ngModelOptions]="{standalone: true}">
+      </mat-form-field>
+  </form>
+  <app-grid-training-plan class="row" style="width: 100%;" [(exercises)]="workoutPart.exercises"></app-grid-training-plan>
+</div>
+

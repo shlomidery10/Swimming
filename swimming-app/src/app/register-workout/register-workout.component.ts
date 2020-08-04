@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Workout } from '../shared/models/workout.model';
+import { WorkoutPart } from '../shared/models/workoutPart.model';
 
 @Component({
   selector: 'app-register-workout',
@@ -8,11 +10,12 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class RegisterWorkoutComponent implements OnInit {
   // loginForm: FormGroup;
+
+  @Input() workout:Workout = new Workout(null,null,null,null,[ new WorkoutPart("Warmup","test",[])]);
+  @Output() workoutChange = new EventEmitter();
+  
   value = 'Clear me';
-  trainerName:string;
-  week:number;
-  goal_of_training:string;
-  date:string;
+
 
   constructor() { 
 
