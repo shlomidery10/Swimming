@@ -2,4 +2,4 @@
     <!-- <mat-label>distance</mat-label> -->
     <input matInput type="{{type}}" [(ngModel)]="value"  (change)="inputOnChange()" (input)="resize()" [ngStyle]="{'width.px': width}" [disabled]="isBlank" >
 </mat-form-field>
-<span #hiddenText style="visibility: hidden; white-space: pre;">{{value}}</span>
+<span #hiddenText style="visibility: hidden; white-space: pre; position: absolute;">{{value}}</span>

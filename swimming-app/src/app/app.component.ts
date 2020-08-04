@@ -15,4 +15,6 @@ export class AppComponent {
     repetition:null,
     exerciseSets:new Array<ExerciseSet>()
   };
+
+  exerciseSets:ExerciseSet = new ExerciseSet("str",9);
 }

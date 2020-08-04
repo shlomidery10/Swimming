@@ -25,7 +25,7 @@ export class MatFormAutowidthFieldComponent implements OnInit {
   }
 
   resize() {
-    setTimeout(() => this.width = Math.max(this.minWidth, this.textEl.nativeElement.offsetWidth));
+    setTimeout(() => this.width = Math.max(this.minWidth, this.textEl.nativeElement.offsetWidth+5));
   }
 
   inputOnChange(){

@@ -1,11 +1,13 @@
 mat-form-autowidth-field{
     margin-right: -15px;
     margin-left: 5px;
+    display: inline-flex;
 
 }
 
 mat-label{
     margin-right: 5px;
     margin-left: 5px;
+    display: inline-flex;
 
 }
