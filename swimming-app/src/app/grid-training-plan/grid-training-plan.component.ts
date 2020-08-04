@@ -12,7 +12,7 @@ import 'ag-grid-community/dist/styles/ag-theme-material.css';
 })
 export class GridTrainingPlanComponent implements OnInit, OnChanges {
   gridOptions:GridOptions;
-  @Input() exercises:Exercise[] = [ new Exercise(null,null,null,[])];
+  @Input() exercises:Exercise[] = [ ];
   @Output() exercisesChange = new EventEmitter();
   columnDefs = [
     {
