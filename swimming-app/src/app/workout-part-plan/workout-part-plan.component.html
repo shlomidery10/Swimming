@@ -1,8 +1,8 @@
 <div class="container">
   <div class="row center">
-    <mat-form-autowidth-field [type]="'text'" [minWidth]="150" [(value)]="workoutPart.name" [label]="'register-workout.WorkoutPartLabel'" ></mat-form-autowidth-field>
+    <mat-form-autowidth-field [type]="'text'" [minWidth]="150" [(value)]="workoutPart.name" [label]="'workout-part-plan.WorkoutPartLabel'" ></mat-form-autowidth-field>
 
-    <mat-form-autowidth-field [type]="'text'" [minWidth]="150" [(value)]="workoutPart.goal" [label]="'register-workout.GoalOfPartLabel'" ></mat-form-autowidth-field>
+    <mat-form-autowidth-field [type]="'text'" [minWidth]="150" [(value)]="workoutPart.goal" [label]="'workout-part-plan.GoalOfPartLabel'" ></mat-form-autowidth-field>
 
   </div>
   <app-grid-training-plan class="row" style="width: 100%;" [(exercises)]="workoutPart.exercises"></app-grid-training-plan>
