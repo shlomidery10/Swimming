@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 
 @Component({
   selector: 'mat-form-autowidth-field',
@@ -12,13 +13,23 @@ export class MatFormAutowidthFieldComponent implements OnInit {
   }
   @Input() value: any;
   @Input() type: string;
+  @Input() label: string;
+  
   @Output() valueChange = new EventEmitter();
+  
   @ViewChild('hiddenText') textEl: ElementRef;
 
   minWidth: number;
   width:number;
-
-  constructor() { }
+  isRTL:boolean= false;
+  constructor(public translate: TranslateService) { 
+    this.translate.get('direction').subscribe((res: any) => {
+      this.isRTL = res == "rtl";
+    });
+    translate.onLangChange.subscribe((event: LangChangeEvent) => {
+      this.isRTL = event.translations['direction'] == "rtl";
+    });
+  }
 
   ngOnInit(): void {
     this.resize();
@@ -31,4 +42,5 @@ export class MatFormAutowidthFieldComponent implements OnInit {
   inputOnChange(){
     this.valueChange.emit(this.value);
   }
+
 }

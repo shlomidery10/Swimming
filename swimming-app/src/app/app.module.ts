@@ -25,7 +25,14 @@ import { CommonModule } from '@angular/common';
 import { MatFormAutowidthFieldComponent } from './shared/mat-form-autowidth-field/mat-form-autowidth-field.component';
 import { ExerciseSetComponent } from './exercise/exercise-set/exercise-set.component';
 import { WorkoutPartPlanComponent } from './workout-part-plan/workout-part-plan.component';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import { NoRowsOverlayComponent } from './grid-training-plan/no-rows-overlay/no-rows-overlay.component';
 
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,8 +49,7 @@ import { WorkoutPartPlanComponent } from './workout-part-plan/workout-part-plan.
     MatFormAutowidthFieldComponent,
     ExerciseSetComponent,
     WorkoutPartPlanComponent,
-
-    
+    NoRowsOverlayComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,9 +64,15 @@ import { WorkoutPartPlanComponent } from './workout-part-plan/workout-part-plan.
     MatInputModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    CommonModule 
-
-
+    CommonModule,    
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (createTranslateLoader), // exported factory function needed for AoT compilation
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
