@@ -1,0 +1,21 @@
+{
+    "direction":"rtl",
+    "apptitle":"אפליקציית שחייה",
+    "register-workout":{
+        "TraineeNameLabel":"שם המתאמן",
+        "DatePickerLabel":"בחר תאריך",
+        "WeekNumberLabel":"מספר השבוע",
+        "TrainingGoalLabel":"מטרת האימון"
+    },
+    "workout-part-plan":{
+        "WorkoutPartLabel":"שלב האימון",
+        "GoalOfPartLabel": "מטרת שלב האימון"
+    },
+    "grid-training-plan":{
+        "LoadingLabel":"בטעינה...",
+        "NoRowsLabel":"אין מידע להציג...",
+        "ExerciseLabel":"תרגילים"
+
+    }
+}
+

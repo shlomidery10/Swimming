@@ -1,0 +1,22 @@
+{
+    "direction":"ltr",
+    "apptitle":"swimming-app",
+    "register-workout":{
+        "TraineeNameLabel":"Name of the trainee",
+        "DatePickerLabel":"Choose a date",
+        "WeekNumberLabel":"Week number",
+        "TrainingGoalLabel":"Goal of the training"
+    },
+    "workout-part-plan":{
+        "WorkoutPartLabel":"Workout Part",
+        "GoalOfPartLabel": "Part goal"
+    },
+    "grid-training-plan":{
+        "LoadingLabel":"Loading...",
+        "NoRowsLabel":"No rows to show..",
+        "ExerciseLabel":"Exercise"
+
+    }
+}
+
+

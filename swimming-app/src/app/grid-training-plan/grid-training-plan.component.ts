@@ -1,9 +1,11 @@
 import { Component, OnInit, OnChanges, SimpleChanges, Input, Output, EventEmitter } from '@angular/core';
-import { Module, GridOptions } from 'ag-grid-community';
+import { Module, GridOptions,ColDef } from 'ag-grid-community';
 import { TrainingCellComponent } from './Icell_Renderer_Components/training-cell/training-cell.component';
 import { Exercise } from 'src/app/shared/models/exercise.model';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-material.css';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
+import { NoRowsOverlayComponent } from './no-rows-overlay/no-rows-overlay.component';
 
 @Component({
   selector: 'app-grid-training-plan',
@@ -11,22 +13,34 @@ import 'ag-grid-community/dist/styles/ag-theme-material.css';
   styleUrls: ['./grid-training-plan.component.css']
 })
 export class GridTrainingPlanComponent implements OnInit, OnChanges {
-  gridOptions:GridOptions;
+  
   @Input() exercises:Exercise[] = [ ];
   @Output() exercisesChange = new EventEmitter();
-  columnDefs = [
+  
+  gridOptions:GridOptions;
+  overlayLoadingTemplate;
+  overlayNoRowsTemplate;
+  isLangugeLoaded:boolean = false;
+  isRTL:boolean = false;
+  
+  columnDefs:ColDef[]= [
     {
       field: 'exercise',
       cellRenderer: "training_cell_component", 
       // autoHeight: true,
-  },
+    },
   ];
   rowData = this.exercises.map(e=> {return { exercise:e}} );
 
-  constructor() { 
+
+  constructor(private translate: TranslateService) {
+    translate.onLangChange.subscribe((event: LangChangeEvent) => {
+      this.translateLabels();
+    });
     this.gridOptions = <GridOptions>{
       rowData: this.rowData,
       columnDefs: this.columnDefs,
+      noRowsOverlayComponent: 'NoRowsOverlayComponent',
     //   defaultColDef: {
     //     enableRowGroup: true,
     //     enablePivot: true,
@@ -39,6 +53,7 @@ export class GridTrainingPlanComponent implements OnInit, OnChanges {
     //     minWidth: 100
     // },
       onGridReady: () => {
+        this.translateLabels();
         this.gridOptions.columnApi.autoSizeAllColumns();
         this.gridOptions.api.sizeColumnsToFit();
       },
@@ -51,13 +66,37 @@ export class GridTrainingPlanComponent implements OnInit, OnChanges {
       headerHeight: 48,
       frameworkComponents: {
         training_cell_component: TrainingCellComponent,
-        // toggleHeaderRenderer: MatButtonToggleHeaderComponent,
+        NoRowsOverlayComponent: NoRowsOverlayComponent,
           // progressRenderer: MatProgressSpinnerComponent
       },
       // rowModelType : 'infinite'
   };
   }
   
+  translateLabels(){
+    this.isLangugeLoaded =false;
+    this.translate.get('direction').subscribe((res: any) => {
+      this.isRTL = res == "rtl";
+    });
+    this.translate.get('grid-training-plan').subscribe((res: any) => {
+      this.overlayNoRowsTemplate =res.NoRowsLabel;
+      this.overlayLoadingTemplate =res.LoadingLabel;
+      this.columnDefs = [
+        {
+          headerName: res.ExerciseLabel,
+          field: 'exercise',
+          cellRenderer: "training_cell_component", 
+          // autoHeight: true,
+        },
+      ];
+      if( this.gridOptions &&  this.gridOptions.api){
+        this.gridOptions.api.setColumnDefs(this.columnDefs)
+        this.gridOptions.api.setRowData(this.rowData);
+      }
+      this.isLangugeLoaded =true;
+    });
+  }
+
   ngOnInit(): void {
   }
   
@@ -80,10 +119,5 @@ export class GridTrainingPlanComponent implements OnInit, OnChanges {
       this.updateRowData();
 
     }
-
-
-
-
-
 
 }

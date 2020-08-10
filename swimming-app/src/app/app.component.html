@@ -1,4 +1,10 @@
-<app-homepage></app-homepage>
+<div [ngStyle]="{'direction': direction, 'text-align': direction=='ltr'? 'left': 'right' }">
+    <select #langSelect (change)="translate.use(langSelect.value)">
+        <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
+      </select>
+      
+    <app-homepage></app-homepage>
+</div>
 
 <!-- 
  <div style="overflow-x: auto; margin-bottom:5px;" >
