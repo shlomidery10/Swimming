@@ -1,0 +1,5 @@
+<user-form [(userDetails)]= "coachDetails"></user-form>
+
+<team-details [(teamDetails)]="coachDetails.teams[0]"></team-details>
+
+{{ coachDetails | json }}

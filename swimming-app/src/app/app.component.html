@@ -1,59 +1,17 @@
 <div [ngStyle]="{'direction': direction, 'text-align': direction=='ltr'? 'left': 'right' }">
+    
+    <!-- <trainee-grid [(trainees)]= "trainees"></trainee-grid>team-details -->
+    <!-- <coach-details [(coachDetails)]="coachDetails"></coach-details>
+    {{coachDetails|json}}
+    <br/>
+    <br/>
+    <br/> -->
+
     <select #langSelect (change)="translate.use(langSelect.value)">
         <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
-      </select>
-      
+    </select>
+
+    <br/>
+
     <app-homepage></app-homepage>
 </div>
-
-<!-- 
- <div style="overflow-x: auto; margin-bottom:5px;" >
-    <exercise [value]="exercise"></exercise>
-</div> -->
-<!-- 
-<div class="container-fluid">
-    <div class="row"  style="flex-wrap: nowrap;overflow: auto;"> 
-        <div >
-            <exercise-set [(exerciseSet)]="exerciseSets"></exercise-set>
-        </div>
-        <div>
-            <exercise-set blank ></exercise-set>
-        </div>
-        <div >
-            <exercise-set [(exerciseSet)]="exerciseSets"></exercise-set>
-        </div>
-        <div>
-            <exercise-set blank ></exercise-set>
-        </div>
-        <div >
-            <exercise-set [(exerciseSet)]="exerciseSets"></exercise-set>
-        </div>
-        <div>
-            <exercise-set blank ></exercise-set>
-        </div>
-        <div >
-            <exercise-set [(exerciseSet)]="exerciseSets"></exercise-set>
-        </div>
-        <div >
-            <exercise-set [(exerciseSet)]="exerciseSets"></exercise-set>
-        </div>
-        <div >
-            <exercise-set [(exerciseSet)]="exerciseSets"></exercise-set>
-        </div>
-        <div >
-            <exercise-set [(exerciseSet)]="exerciseSets"></exercise-set>
-        </div>
-        <div >
-            <exercise-set [(exerciseSet)]="exerciseSets"></exercise-set>
-        </div>
-        <div >
-            <exercise-set [(exerciseSet)]="exerciseSets"></exercise-set>
-        </div>
-        <div >
-            <exercise-set [(exerciseSet)]="exerciseSets"></exercise-set>
-        </div>
-        <div>
-            <exercise-set blank ></exercise-set>
-        </div>
-    </div>
-</div>  -->

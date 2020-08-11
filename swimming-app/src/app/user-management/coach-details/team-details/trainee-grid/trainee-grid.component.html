@@ -1,0 +1,30 @@
+<div style="float:left; margin-bottom:5px;width: inherit;" >
+    <div class="container">
+            <div class="row" [ngSwitch]="isRTL" *ngIf="isLangugeLoaded">
+            <ag-grid-angular 
+            *ngSwitchCase="true"
+            [enableRtl]="true"
+            style="width: 100%; height: 200px;"
+            class="ag-theme-alpine"
+            [gridOptions]="gridOptions"
+            [overlayLoadingTemplate]="overlayLoadingTemplate"
+            >
+            </ag-grid-angular>
+            <ag-grid-angular 
+            *ngSwitchCase="false"
+            [enableRtl]="false"
+            style="width: 100%; height: 200px;"
+            class="ag-theme-alpine"
+            [gridOptions]="gridOptions"
+            [overlayLoadingTemplate]="overlayLoadingTemplate"
+            >
+            </ag-grid-angular>
+        </div>   
+        <div class="row">
+            <button (click)="addNewExercise()" mat-icon-button style="outline: none;" >
+                <mat-icon>add_circle_outline</mat-icon>
+            </button>  
+
+        </div>
+    </div>
+</div>

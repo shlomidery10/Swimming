@@ -28,7 +28,13 @@ import { WorkoutPartPlanComponent } from './workout-part-plan/workout-part-plan.
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-import { NoRowsOverlayComponent } from './grid-training-plan/no-rows-overlay/no-rows-overlay.component';
+import { NoRowsOverlayComponent as TraineeGridNoRowsOverlayComponent } from './grid-training-plan/no-rows-overlay/no-rows-overlay.component';
+import { UserManagementComponent } from './user-management/user-management.component';
+import { UserFormComponent } from './user-management/user-form/user-form.component';
+import { CoachDetailsComponent } from './user-management/coach-details/coach-details.component';
+import { TeamDetailsComponent } from './user-management/coach-details/team-details/team-details.component';
+import { TraineeGridComponent } from './user-management/coach-details/team-details/trainee-grid/trainee-grid.component';
+import { NoRowsOverlayComponent as GridTrainingPlanNoRowsOverlayComponent } from './user-management/coach-details/team-details/trainee-grid/no-rows-overlay/no-rows-overlay.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -49,7 +55,13 @@ export function createTranslateLoader(http: HttpClient) {
     MatFormAutowidthFieldComponent,
     ExerciseSetComponent,
     WorkoutPartPlanComponent,
-    NoRowsOverlayComponent,
+    GridTrainingPlanNoRowsOverlayComponent,
+    UserManagementComponent,
+    UserFormComponent,
+    CoachDetailsComponent,
+    TeamDetailsComponent,
+    TraineeGridComponent,
+    TraineeGridNoRowsOverlayComponent,
   ],
   imports: [
     BrowserModule,

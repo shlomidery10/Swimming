@@ -2,6 +2,10 @@ import { Component } from '@angular/core';
 import { Exercise } from './shared/models/exercise.model';
 import { ExerciseSet } from './shared/models/exerciseSet.model';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
+import { User } from './shared/models/user.model';
+import { Coach } from './shared/models/coach.model';
+import { Trainee } from './shared/models/trainee.model';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -34,5 +38,43 @@ export class AppComponent {
   };
 
   exerciseSets:ExerciseSet = new ExerciseSet("str",9);
+  coach:Coach= {
+    firstName:"תמיר",
+    lastName:"111חומ",
+    email:"tamir@gmail.com",
+    teams: []
+  };
+  userDetails:User[]=[{
+    firstName:"תמיר",
+    lastName:"111חומ",
+    email:"tamir@gmail.com",
+  },{
+    firstName:"תמיר",
+    lastName:"222חומ",
+    email:"tamir@gmail.com"
+  },
+    this.coach
+  ];
 
+  trainees:Trainee[]= [{
+    firstName:"תמיר",
+    lastName:"111חומ",
+    email:"tamir@gmail.com",
+  },{
+    firstName:"תמיר",
+    lastName:"222חומ",
+    email:"tamir@gmail.com"
+  }
+  ];
+  coachDetails: Coach= {
+    firstName:"",
+    lastName:"",
+    email:"",
+    teams:[
+      {
+        name:"",
+        trainees:[]
+      }
+    ]
+  };
 }
