@@ -16,4 +16,6 @@ export class PlaningWorkoutComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  
+
 }

@@ -1,10 +1,10 @@
 <div class="container-fluid">
     <div class="row" style="flex-wrap: nowrap;"> 
-            <mat-form-autowidth-field [type]="'number'" [minWidth]="50" [(value)]="value.repetition"></mat-form-autowidth-field>
+            <mat-form-autowidth-field [type]="'number'" [minWidth]="50" [(value)]="value.repetition" (onValueChange)="validateExercise($event)"></mat-form-autowidth-field>
             
             <mat-label>x</mat-label>
             
-            <mat-form-autowidth-field [type]="'number'" [minWidth]="50" [(value)]="value.distance"></mat-form-autowidth-field>
+            <mat-form-autowidth-field [type]="'number'" [minWidth]="50" [(value)]="value.distance" (onValueChange)="validateExercise($event)"></mat-form-autowidth-field>
             
             <mat-label>-</mat-label>
             
@@ -14,7 +14,7 @@
 
         <!-- <div class="container"> -->
                 <div  *ngFor="let exercise of value.exerciseSets; index as i;">
-                    <exercise-set [(exerciseSet)]="value.exerciseSets[i]"></exercise-set>
+                    <exercise-set [(exerciseSet)]="value.exerciseSets[i]"  (onValueChange)="validateExercise($event)"></exercise-set>
                 </div>
                 <div>
                     <exercise-set blank (exerciseSetChange)= "addNewSplitDistance($event)"></exercise-set>
@@ -23,5 +23,8 @@
             
             <mat-label>]</mat-label>
 
+    </div>
+    <div *ngIf="validationResult != 'NoError'" class="row" style="flex-wrap: nowrap;margin-top: -25px;margin-bottom: -10px;color: red;"> 
+        {{ "exercise.ValidationLabels."+validationResult | translate}}
     </div>
 </div>

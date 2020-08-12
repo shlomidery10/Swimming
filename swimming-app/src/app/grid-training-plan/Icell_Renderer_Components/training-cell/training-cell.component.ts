@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { WorkoutPart } from 'src/app/shared/models/workoutPart.model';
 import { Exercise } from 'src/app/shared/models/exercise.model';
@@ -14,9 +14,6 @@ export class TrainingCellComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-
-
 
   constructor(private formBuilder: FormBuilder) {
     this.exercise=new Exercise(null,null,null,[]);
@@ -37,8 +34,13 @@ export class TrainingCellComponent implements OnInit {
       if (this.params.eGridCell) {
           this.params.eGridCell.focus();
       }
+      this.params.onValueChange.emit();
   }
 
+  exerciseChanged(event){
+    this.params.onValueChange.emit();
+
+  }
   refresh(params: any): boolean {
       return false;
   }

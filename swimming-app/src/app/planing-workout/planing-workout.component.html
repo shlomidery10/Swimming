@@ -6,5 +6,8 @@
     </div>
     <div class="row">
         {{workout|json}}
+
+        <mat-form-autowidth-field [type]="'number'" [isBlank]="true" [minWidth]="150" [(value)]="workout.totalDistance" [label]="'planing-workout.TotalDistanceLabel'" ></mat-form-autowidth-field>
+
     </div>
 </div>

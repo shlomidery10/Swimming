@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { WorkoutPart } from '../shared/models/workoutPart.model';
 import { Exercise } from '../shared/models/exercise.model';
+import { calculateExerciseDistance } from '../shared/Utilities';
 
 @Component({
   selector: 'workout-part-plan',
@@ -16,5 +17,12 @@ export class WorkoutPartPlanComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  updateTotalDistance(){
+    let totalDistance =0;
+    this.workoutPart.exercises.forEach(exercise=> totalDistance+=calculateExerciseDistance(exercise));
+    this.workoutPart.totalDistance= totalDistance;
+  }
+
 
 }

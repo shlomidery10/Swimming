@@ -16,6 +16,7 @@ export class GridTrainingPlanComponent implements OnInit, OnChanges {
   
   @Input() exercises:Exercise[] = [ ];
   @Output() exercisesChange = new EventEmitter();
+  @Output() onValueChange = new EventEmitter();
   
   gridOptions:GridOptions;
   overlayLoadingTemplate;
@@ -26,7 +27,10 @@ export class GridTrainingPlanComponent implements OnInit, OnChanges {
   columnDefs:ColDef[]= [
     {
       field: 'exercise',
-      cellRenderer: "training_cell_component", 
+      cellRenderer: "training_cell_component",
+      cellRendererParams: {
+        onValueChange: this.onValueChange
+      } 
       // autoHeight: true,
     },
   ];
@@ -65,7 +69,7 @@ export class GridTrainingPlanComponent implements OnInit, OnChanges {
       rowHeight: 80, // recommended row height for material design data grids,
       headerHeight: 48,
       frameworkComponents: {
-        training_cell_component: TrainingCellComponent,
+        training_cell_component: TrainingCellComponent ,
         NoRowsOverlayComponent: NoRowsOverlayComponent,
           // progressRenderer: MatProgressSpinnerComponent
       },
@@ -86,6 +90,9 @@ export class GridTrainingPlanComponent implements OnInit, OnChanges {
           headerName: res.ExerciseLabel,
           field: 'exercise',
           cellRenderer: "training_cell_component", 
+          cellRendererParams: {
+            onValueChange: this.onValueChange
+          } 
           // autoHeight: true,
         },
       ];
@@ -110,6 +117,7 @@ export class GridTrainingPlanComponent implements OnInit, OnChanges {
       this.gridOptions.api.setRowData(this.rowData);
       this.gridOptions.api.sizeColumnsToFit();
     }
+    this.onValueChange.emit();
   }
 
   addNewExercise()
