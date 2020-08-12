@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NoRowsOverlayComponent } from './no-rows-overlay.component';
+import { UserManagementComponent } from './user-management.component';
 
-describe('NoRowsOverlayComponentComponent', () => {
-  let component: NoRowsOverlayComponent;
-  let fixture: ComponentFixture<NoRowsOverlayComponent>;
+describe('UserManagementComponent', () => {
+  let component: UserManagementComponent;
+  let fixture: ComponentFixture<UserManagementComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NoRowsOverlayComponent ]
+      declarations: [ UserManagementComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NoRowsOverlayComponent);
+    fixture = TestBed.createComponent(UserManagementComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

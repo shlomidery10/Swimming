@@ -13,9 +13,23 @@
     },
     "grid-training-plan":{
         "LoadingLabel":"בטעינה...",
-        "NoRowsLabel":"אין מידע להציג...",
+        "NoRowsLabel":"אין תרגילים בחלק זה של האימון...",
         "ExerciseLabel":"תרגילים"
-
+    },
+    "trainee-grid":{
+        "LoadingLabel":"בטעינה...",
+        "NoRowsLabel":"אין מתאמנים המשוייכים לקבוצה...",
+        "FirstNameLabel":"שם פרטי",
+        "LastNameLabel":"שם משפחה",
+        "EmailLabel":"אי-מייל"
+    },
+    "user-form":{
+        "FirstNameLabel":"שם פרטי",
+        "LastNameLabel":"שם משפחה",
+        "EmailLabel":"אי-מייל"
+    },
+    "team-details":{
+        "NameLabel":"שם הקבוצה"
     }
 }
 

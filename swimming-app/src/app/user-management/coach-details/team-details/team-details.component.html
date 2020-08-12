@@ -1,0 +1,7 @@
+
+<div class="container">
+    <div class="row center">
+        <mat-form-autowidth-field [type]="'text'" [minWidth]="150" [(value)]="teamDetails.name" [label]="'team-details.NameLabel'" ></mat-form-autowidth-field>
+    </div>
+    <trainee-grid class="row" style="width: 100%;" [(trainees)]="teamDetails.trainees"></trainee-grid>
+  </div>

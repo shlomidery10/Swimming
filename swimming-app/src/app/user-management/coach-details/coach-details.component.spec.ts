@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NoRowsOverlayComponent } from './no-rows-overlay.component';
+import { CoachDetailsComponent } from './coach-details.component';
 
-describe('NoRowsOverlayComponentComponent', () => {
-  let component: NoRowsOverlayComponent;
-  let fixture: ComponentFixture<NoRowsOverlayComponent>;
+describe('CoachDetailsComponent', () => {
+  let component: CoachDetailsComponent;
+  let fixture: ComponentFixture<CoachDetailsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NoRowsOverlayComponent ]
+      declarations: [ CoachDetailsComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NoRowsOverlayComponent);
+    fixture = TestBed.createComponent(CoachDetailsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
