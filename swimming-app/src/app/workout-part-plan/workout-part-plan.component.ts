@@ -12,7 +12,8 @@ export class WorkoutPartPlanComponent implements OnInit {
 
   @Input() workoutPart:WorkoutPart = new WorkoutPart(null,null,[ new Exercise(null,null,null,[])]);
   @Output() workoutPartChange = new EventEmitter();
-
+  @Output() onValueChange = new EventEmitter();
+  
   constructor() { }
 
   ngOnInit(): void {
@@ -22,6 +23,7 @@ export class WorkoutPartPlanComponent implements OnInit {
     let totalDistance =0;
     this.workoutPart.exercises.forEach(exercise=> totalDistance+=calculateExerciseDistance(exercise));
     this.workoutPart.totalDistance= totalDistance;
+    this.onValueChange.emit();
   }
 
 

@@ -16,6 +16,9 @@ export class PlaningWorkoutComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  
+  updateTotalDistance(){
+     this.workout.totalDistance = this.workout.workoutParts
+                        .reduce((sum, workoutPart) => sum + workoutPart.totalDistance, 0);
+  }
 
 }
