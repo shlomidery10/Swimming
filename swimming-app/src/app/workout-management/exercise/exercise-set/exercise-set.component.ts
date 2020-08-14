@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter, ElementRef, ViewChild } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import { ExerciseSet } from '../../shared/models/exerciseSet.model';
+import { ExerciseSet } from '../../../shared/models/exerciseSet.model';
 
 @Component({
   selector: 'exercise-set',

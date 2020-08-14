@@ -1,7 +1,7 @@
 import { Component, OnInit, EventEmitter, Input, Output, OnChanges, SimpleChanges } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import { Exercise } from '../shared/models/exercise.model';
-import { ExerciseSet } from '../shared/models/exerciseSet.model';
+import { Exercise } from '../../shared/models/exercise.model';
+import { ExerciseSet } from '../../shared/models/exerciseSet.model';
 
 @Component({
   selector: 'exercise',

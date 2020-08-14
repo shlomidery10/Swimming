@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { WorkoutPart } from '../shared/models/workoutPart.model';
-import { Exercise } from '../shared/models/exercise.model';
-import { calculateExerciseDistance } from '../shared/Utilities';
+import { WorkoutPart } from '../../shared/models/workoutPart.model';
+import { Exercise } from '../../shared/models/exercise.model';
+import { calculateExerciseDistance } from '../../shared/Utilities';
 
 @Component({
   selector: 'workout-part-plan',

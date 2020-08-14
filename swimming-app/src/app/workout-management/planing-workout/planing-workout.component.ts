@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Exercise } from '../shared/models/exercise.model';
-import { Workout } from '../shared/models/workout.model';
-import { WorkoutPart } from '../shared/models/workoutPart.model';
+import { Exercise } from '../../shared/models/exercise.model';
+import { Workout } from '../../shared/models/workout.model';
+import { WorkoutPart } from '../../shared/models/workoutPart.model';
 
 @Component({
   selector: 'app-planing-workout',
