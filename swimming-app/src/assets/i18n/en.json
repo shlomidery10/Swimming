@@ -7,9 +7,13 @@
         "WeekNumberLabel":"Week number",
         "TrainingGoalLabel":"Goal of the training"
     },
+    "planing-workout":{
+        "TotalDistanceLabel":"Total disdance"
+    },
     "workout-part-plan":{
         "WorkoutPartLabel":"Workout Part",
-        "GoalOfPartLabel": "Part goal"
+        "GoalOfPartLabel": "Part goal",
+        "TotalDistanceLabel":"Total disdance"
     },
     "grid-training-plan":{
         "LoadingLabel":"Loading...",
@@ -30,6 +34,12 @@
     },
     "team-details":{
         "NameLabel":"Team Name"
+    },
+    "exercise":{
+        "ValidationLabels": {
+            "NoError" :"No Error",
+            "DistanceDontMatch":"Distance split don't match"
+        }
     }
 }
 

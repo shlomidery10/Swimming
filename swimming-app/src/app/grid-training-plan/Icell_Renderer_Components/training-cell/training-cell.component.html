@@ -13,7 +13,7 @@
   </div>
 </div> -->
 <div style="overflow-x: auto; margin-bottom:5px;" >
-  <exercise [value]="exercise"></exercise>
+  <exercise [(value)]="exercise" (onValueChange)="exerciseChanged($event)"></exercise>
 </div>
 
       

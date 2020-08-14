@@ -2,9 +2,12 @@
 <div class="container">
     <app-register-workout [(workout)]="workout" class="row"></app-register-workout>
     <div class="row" *ngFor="let workoutPart of workout.workoutParts; index as i;">
-        <workout-part-plan style="width: 100%;" [(workoutPart)]="workout.workoutParts[i]"></workout-part-plan>
+        <workout-part-plan style="width: 100%;" [(workoutPart)]="workout.workoutParts[i]" (onValueChange)="updateTotalDistance()"></workout-part-plan>
     </div>
     <div class="row">
         {{workout|json}}
+
+        <mat-form-autowidth-field [type]="'number'" [isBlank]="true" [minWidth]="150" [(value)]="workout.totalDistance" [label]="'planing-workout.TotalDistanceLabel'" ></mat-form-autowidth-field>
+
     </div>
 </div>

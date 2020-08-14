@@ -1,9 +1,9 @@
 <mat-form-field style="margin-right: 30px;"  [ngStyle]="{'width.px': width,'text-align': isRTL? 'right': 'left'}">
     <mat-label *ngIf="label">{{ label | translate}}</mat-label>
-    <input *ngIf="type != 'datepicker'" matInput type="{{type}}" [(ngModel)]="value"  (change)="inputOnChange()" (input)="resize()" [ngStyle]="{'width.px': width}" [disabled]="isBlank" >
+    <input *ngIf="type != 'datepicker'" matInput type="{{type}}" [(ngModel)]="value"  (change)="inputOnChange($event)" (input)="resize()" [ngStyle]="{'width.px': width}" [disabled]="isBlank" >
     
     <!-- Date Picker -->
-    <input *ngIf="type == 'datepicker'" matInput [matDatepicker]="picker" [(ngModel)]="value"  (change)="inputOnChange()" (input)="resize()"  (click)="picker.open()" [ngStyle]="{'width.px': width}" [disabled]="isBlank" >
+    <input *ngIf="type == 'datepicker'" matInput [matDatepicker]="picker" [(ngModel)]="value"  (change)="inputOnChange($event)" (input)="resize()"  (click)="picker.open()" [ngStyle]="{'width.px': width}" [disabled]="isBlank" >
     <mat-datepicker *ngIf="type == 'datepicker'" #picker></mat-datepicker>
 </mat-form-field>
 <span #hiddenText style="visibility: hidden; white-space: pre; position: absolute;">{{value}}</span>

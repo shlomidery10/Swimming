@@ -15,6 +15,8 @@ export class ExerciseSetComponent implements OnInit {
     this.isBlank = blank === '' || blank;
   }
   @Output() exerciseSetChange = new EventEmitter();
+  @Output() onValueChange = new EventEmitter();
+
   @ViewChild('hiddenText') textEl: ElementRef;
   width:number;
   minWidth: number =30;

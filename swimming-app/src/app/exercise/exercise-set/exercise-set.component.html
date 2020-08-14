@@ -1,7 +1,7 @@
 <!-- <div class="container" > -->
     <div (click)="inputOnChange()" style="display: flex;">
         <!-- <div class="col"> -->
-            <mat-form-autowidth-field [type]="'number'" [isBlank]="isBlank" [minWidth]="50" [(value)]="exerciseSet.distance"></mat-form-autowidth-field>
+            <mat-form-autowidth-field [type]="'number'" [isBlank]="isBlank" [minWidth]="50" [(value)]="exerciseSet.distance" (onValueChange)="onValueChange.emit($event)"></mat-form-autowidth-field>
         <!-- </div> -->
             <mat-label>-</mat-label>
         <!-- <div class="col"> -->

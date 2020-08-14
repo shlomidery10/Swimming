@@ -16,6 +16,7 @@ export class MatFormAutowidthFieldComponent implements OnInit {
   @Input() label: string;
   
   @Output() valueChange = new EventEmitter();
+  @Output() onValueChange = new EventEmitter();
   
   @ViewChild('hiddenText') textEl: ElementRef;
 
@@ -39,8 +40,14 @@ export class MatFormAutowidthFieldComponent implements OnInit {
     setTimeout(() => this.width = Math.max(this.minWidth, this.textEl.nativeElement.offsetWidth+5));
   }
 
-  inputOnChange(){
-    this.valueChange.emit(this.value);
+  inputOnChange(event){
+
+    if(this.type === "number"){
+      this.valueChange.emit(parseInt( this.value));
+    }else{
+      this.valueChange.emit(this.value);
+    }
+    this.onValueChange.emit(event);
   }
 
 }

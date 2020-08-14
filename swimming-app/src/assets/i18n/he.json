@@ -7,9 +7,13 @@
         "WeekNumberLabel":"מספר השבוע",
         "TrainingGoalLabel":"מטרת האימון"
     },
+    "planing-workout":{
+        "TotalDistanceLabel":"מרחק כולל"
+    },
     "workout-part-plan":{
         "WorkoutPartLabel":"שלב האימון",
-        "GoalOfPartLabel": "מטרת שלב האימון"
+        "GoalOfPartLabel": "מטרת שלב האימון",
+        "TotalDistanceLabel":"מרחק כולל"
     },
     "grid-training-plan":{
         "LoadingLabel":"בטעינה...",
@@ -30,6 +34,12 @@
     },
     "team-details":{
         "NameLabel":"שם הקבוצה"
+    },
+    "exercise":{
+        "ValidationLabels": {
+            "NoError" :"תקין",
+            "DistanceDontMatch":"חלוקת המרחקים אינה תואמת..."
+        }
     }
 }
 
