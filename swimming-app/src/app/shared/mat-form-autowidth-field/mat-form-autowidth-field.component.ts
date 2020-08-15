@@ -6,6 +6,7 @@ import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
   templateUrl: './mat-form-autowidth-field.component.html',
   styleUrls: ['./mat-form-autowidth-field.component.css']
 })
+
 export class MatFormAutowidthFieldComponent implements OnInit {
   @Input() isBlank: boolean;
   @Input('minWidth') set setAttribute(blank: number | '') {

@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Workout } from '../shared/models/workout.model';
-import { WorkoutPart } from '../shared/models/workoutPart.model';
+import { Workout } from '../../shared/models/workout.model';
+import { WorkoutPart } from '../../shared/models/workoutPart.model';
 
 @Component({
   selector: 'app-register-workout',
