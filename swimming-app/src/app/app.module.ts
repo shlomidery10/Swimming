@@ -26,6 +26,7 @@ import { TraineeGridComponent } from './user-management/coach-details/team-detai
 import { NoRowsOverlayComponent as GridTrainingPlanNoRowsOverlayComponent } from './user-management/coach-details/team-details/trainee-grid/no-rows-overlay/no-rows-overlay.component';
 import { SharedModule } from './shared/shared.module';
 import { WorkoutManagementModule } from './workout-management/workout-management.module';
+import { WorkoutCalenderModule } from './workout-calender/workout-calender.module';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -58,6 +59,7 @@ export function createTranslateLoader(http: HttpClient) {
     HttpClientModule,
     SharedModule,
     WorkoutManagementModule,
+    WorkoutCalenderModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

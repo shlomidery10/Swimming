@@ -40,6 +40,14 @@
             "NoError" :"תקין",
             "DistanceDontMatch":"חלוקת המרחקים אינה תואמת..."
         }
+    },
+    "calender":{
+        "PreviousLabel":"הקודם",
+        "TodayLabel":"היום",
+        "NextLabel":"הבא",
+        "MonthLabel":"חודשי",
+        "WeekLabel":"שבועי",
+        "DayLabel":"יומי"
     }
 }
 
