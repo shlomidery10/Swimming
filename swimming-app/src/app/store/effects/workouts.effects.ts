@@ -1,23 +1,37 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { EMPTY } from 'rxjs';
-import { map, mergeMap, catchError } from 'rxjs/operators';
+import { EMPTY, of } from 'rxjs';
+import { map, mergeMap, catchError, concatMap, exhaustMap } from 'rxjs/operators';
 import { HttpService } from '../http-service.service';
-import { LoadWorkouts,LoadWorkoutsSuccess } from '../actions/workouts.actions';
+import * as workoutsActions from '../actions/workouts.actions';
+import { Workout } from 'src/app/shared/models/workout.model';
+import { Action } from '@ngrx/store';
 
 @Injectable()
 export class WorkoutsEffects {
  
     loadWorkouts$ = createEffect(() => this.actions$.pipe(
-    ofType(LoadWorkouts),
+    ofType(workoutsActions.LoadWorkouts),
     mergeMap(() => this.httpService.getAll()
       .pipe(
-        map(wokouts => ({ type: LoadWorkoutsSuccess, payload: wokouts })),
+        map((wokouts:Workout[]) => workoutsActions.loadWorkoutsSuccess({ payload: wokouts})),
         catchError(() => EMPTY)
       ))
     )
   );
- 
+
+  loadWorkout$ =  createEffect(() =>
+  this.actions$.pipe(
+    ofType(workoutsActions.loadSingleWorkout),
+    exhaustMap(action =>
+      this.httpService.getWorkout(action.workout).pipe(
+        map(workout => workoutsActions.loadSingleWorkoutSuccess({ payload: workout })),
+        catchError(() => EMPTY)
+      )
+    )
+  )
+);
+
   constructor(
     private actions$: Actions,
     private httpService: HttpService

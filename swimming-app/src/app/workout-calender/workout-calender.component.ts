@@ -7,7 +7,7 @@ import { registerLocaleData } from '@angular/common';
 import localeHe from '@angular/common/locales/he';
 import { Workout } from '../shared/models/workout.model';
 import { Store } from '@ngrx/store';
-import { LoadWorkouts } from '../store/actions/workouts.actions';
+import { LoadWorkouts, LoadSingleWorkout } from '../store/actions/workouts.actions';
 
 registerLocaleData(localeHe);
 
@@ -177,6 +177,10 @@ export class WorkoutCalenderComponent implements OnInit {
 
   handleEvent(action: string, event: CalendarEvent): void {
     this.modalData = { event, action };
+    if( action == 'Edited'){
+
+      this.store.dispatch( { type:LoadSingleWorkout, workout: new Workout(null,null,null,null,null)})
+    }
     // this.modal.open(this.modalContent, { size: 'lg' });
   }
 
