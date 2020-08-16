@@ -28,6 +28,12 @@ import { SharedModule } from './shared/shared.module';
 import { WorkoutManagementModule } from './workout-management/workout-management.module';
 import { WorkoutCalenderModule } from './workout-calender/workout-calender.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { StoreModule } from '@ngrx/store';
+import { reducers, metaReducers } from './store/reducers';
+import { WorkoutsEffects } from './store/effects/workouts.effects';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -68,7 +74,13 @@ export function createTranslateLoader(http: HttpClient) {
         useFactory: (createTranslateLoader), // exported factory function needed for AoT compilation
         deps: [HttpClient]
       }
-    })
+    }),
+    StoreModule.forRoot({}, {}),
+    StoreModule.forRoot(reducers, {
+      metaReducers
+    }),
+    EffectsModule.forRoot([WorkoutsEffects]),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]

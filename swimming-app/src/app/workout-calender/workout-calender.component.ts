@@ -1,10 +1,13 @@
 import { Component, OnInit, ViewChild, TemplateRef } from '@angular/core';
 import { CalendarView, CalendarEvent, CalendarEventAction, CalendarEventTimesChangedEvent, CalendarEventTitleFormatter } from 'angular-calendar';
-import { Subject } from 'rxjs';
+import { Subject, Observable } from 'rxjs';
 import { CustomEventTitleFormatter } from './custom-event-title-formatter.provider';
 import { TranslateService } from '@ngx-translate/core';
 import { registerLocaleData } from '@angular/common';
 import localeHe from '@angular/common/locales/he';
+import { Workout } from '../shared/models/workout.model';
+import { Store } from '@ngrx/store';
+import { LoadWorkouts } from '../store/actions/workouts.actions';
 
 registerLocaleData(localeHe);
 
@@ -34,8 +37,9 @@ const colors: any = {
     },
   ],
 })
-export class WorkoutCalenderComponent {
+export class WorkoutCalenderComponent implements OnInit {
   @ViewChild('modalContent', { static: true }) modalContent: TemplateRef<any>;
+  workouts$: Observable<Workout[]> = this.store.select(state => state.workouts);
 
   view: CalendarView = CalendarView.Month;
 
@@ -122,8 +126,12 @@ export class WorkoutCalenderComponent {
 
   activeDayIsOpen: boolean = true;
 
-  constructor(public translate: TranslateService) {
+  constructor(public translate: TranslateService,private store: Store<{ workouts: Workout[] }>) {
     
+  }
+
+  ngOnInit() {
+    this.store.dispatch({ type: LoadWorkouts });
   }
 
   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {

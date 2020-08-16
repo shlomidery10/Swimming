@@ -1,0 +1,60 @@
+[
+    { 
+        "trainerName": "name", 
+        "week": 2, 
+        "goalOfTraining": "test", 
+        "date": null, 
+        "workoutParts": [ 
+            { 
+                "name": "Warmup", 
+                "goal": "test-goal-Warmup", 
+                "exercises": [ 
+                    { 
+                        "repetition": 3, 
+                        "distance": 100, 
+                        "description": "zomers", 
+                        "exerciseSets": [ 
+                            { "description": null, 
+                                "distance": null 
+                            }] 
+                    }], 
+                "totalDistance": 300 
+            }, 
+            { 
+                "name": "main", 
+                "goal": "test-goal-main", 
+                "exercises": [ 
+                    { 
+                        "repetition": 2,
+                        "distance": 50, 
+                        "description": "full", 
+                        "exerciseSets": [ 
+                            { 
+                                "description": "a", 
+                                "distance": 25 
+                            }, 
+                            { 
+                                "description": "b", 
+                                "distance": 25 
+                            } ] 
+                    } ], 
+                "totalDistance": 100 
+                }, 
+                { 
+                    "name": "release", 
+                    "goal": "test-goal-release", 
+                    "exercises": [ 
+                        { 
+                            "repetition": null, 
+                            "distance": 100, 
+                            "description": "free", 
+                            "exerciseSets": [ 
+                                { 
+                                    "description": null, 
+                                    "distance": null
+                                }] 
+                        }], 
+                    "totalDistance": 100 
+                }], 
+        "totalDistance": 500 }
+]
