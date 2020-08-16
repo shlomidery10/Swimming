@@ -40,6 +40,18 @@
             "NoError" :"No Error",
             "DistanceDontMatch":"Distance split don't match"
         }
+    },
+    "calender":{
+        "PreviousLabel":"Previous",
+        "TodayLabel":"Today",
+        "NextLabel":"Next",
+        "MonthLabel":"Month",
+        "WeekLabel":"Week",
+        "DayLabel":"Day"
+    },
+    "page-not-found":{
+        "MessageLabel": "Oops! Something went wrong!",
+        "ReturnToHomeLabel":"Return to Home"
     }
 }
 
