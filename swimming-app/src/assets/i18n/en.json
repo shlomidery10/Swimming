@@ -48,6 +48,10 @@
         "MonthLabel":"Month",
         "WeekLabel":"Week",
         "DayLabel":"Day"
+    },
+    "page-not-found":{
+        "MessageLabel": "Oops! Something went wrong!",
+        "ReturnToHomeLabel":"Return to Home"
     }
 }
 

@@ -27,6 +27,7 @@ import { NoRowsOverlayComponent as GridTrainingPlanNoRowsOverlayComponent } from
 import { SharedModule } from './shared/shared.module';
 import { WorkoutManagementModule } from './workout-management/workout-management.module';
 import { WorkoutCalenderModule } from './workout-calender/workout-calender.module';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -41,6 +42,7 @@ export function createTranslateLoader(http: HttpClient) {
     CoachDetailsComponent,
     TeamDetailsComponent,
     TraineeGridComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,

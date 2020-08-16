@@ -48,6 +48,10 @@
         "MonthLabel":"חודשי",
         "WeekLabel":"שבועי",
         "DayLabel":"יומי"
+    },
+    "page-not-found":{
+        "MessageLabel": "אופס! משהו השתבש!",
+        "ReturnToHomeLabel":"חזרה לדף הבית"
     }
 }
 
